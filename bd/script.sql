@@ -24,3 +24,9 @@ create or replace table login(
 alter table produto change column foto foto longtext not null default "imagens\\avatar.png";
 
 insert into login(email, senha) values ('admin_estoque@loja.com.br', md5('admin_estoque@123'));
+
+create table recuperacao(
+    utilizador varchar(225) NOT NULL,
+    confirmacao varchar(40) NOT NULL,
+    key(utilizador, confirmacao)
+)
